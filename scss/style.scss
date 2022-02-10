@@ -96,13 +96,6 @@ body {
     line-height: 22px;
     letter-spacing: 0.6px;
   }
-
-  &__btn {
-    width: 140px;
-    height: 36px;
-    border: none;
-    color: $white;
-  }
 }
 
 .btn {
@@ -113,6 +106,9 @@ body {
   cursor: pointer;
   padding-top: 9px;
   padding-bottom: 9px;
+  width: 140px;
+  height: 36px;
+  border: none;
 }
 
 .item_blue {
@@ -124,7 +120,7 @@ body {
     color: $blue;
   }
 
-  .item__btn {
+  .btn {
     background: $blue;
   }
 }
@@ -136,8 +132,10 @@ body {
   text-align: center;
 
   &__title {
-    padding: 10px;
+    font-size: 46px;
+    width: 290px;
     color: $cerulean;
+    margin-bottom: 14px;
   }
   &__text {
     color: $white;
@@ -146,19 +144,23 @@ body {
     letter-spacing: 2px;
     margin-bottom: 30px;
   }
+
   &__btn-container {
     display: grid;
     grid-gap: 16px;
     width: 100%;
     margin-bottom: 25px;
   }
-  &__btn {
-    background-color: $black;
-    border: 1px solid $cerulean;
-    &:hover {
-      background-color: $cerulean;
+  .btn {
+    position: relative;
+    width: 100%;
+
+    &_outline {
+      background-color: $black;
+      outline: 1px solid $cerulean;
     }
   }
+
   &__img {
     background: url('../img/marian-kroell-OVXlWNcQV5M-unsplash2.png')
       center/cover no-repeat;

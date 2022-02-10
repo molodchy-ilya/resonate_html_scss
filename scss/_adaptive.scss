@@ -13,6 +13,10 @@
     justify-content: center;
   }
   .footer {
+    padding-top: 60px;
+    &__title {
+      width: 290px;
+    }
     &__container {
       width: 450px;
     }
@@ -23,9 +27,7 @@
     &__btn-container {
       width: 286px;
     }
-    &__btn {
-      width: 140px;
-    }
+
     &__img {
       height: 275px;
     }
@@ -34,10 +36,6 @@
   .item {
     padding: 16px;
     width: 258px;
-
-    &__category {
-      margin-top: 12px;
-    }
 
     &__description {
       margin-bottom: 26px;
@@ -55,16 +53,26 @@
     &__text {
       margin-bottom: 70px;
     }
-    &__btn {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-    }
+  }
+  .btn {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
   }
   .footer {
+    &__title {
+      width: 450px;
+    }
+    &__text {
+      margin-bottom: 30px;
+    }
     &__btn-container {
       grid-template-columns: 1fr 1fr;
       margin: 0 auto 30px;
+    }
+    .btn {
+      bottom: 0;
+      left: 0;
     }
   }
 }
@@ -85,17 +93,24 @@
     width: 345px;
     padding: 28px;
 
+    &__category {
+      margin-top: 12px;
+    }
+
     &__img {
       height: 150px;
       width: 289px;
     }
-
-    &__btn {
-      bottom: 28px;
-      left: 28px;
-    }
+  }
+  .btn {
+    bottom: 28px;
+    left: 28px;
   }
   .footer {
+    padding-top: 70px;
+    &__title {
+      width: 595px;
+    }
     &__container {
       width: 596px;
     }
@@ -142,6 +157,11 @@
     }
   }
   .footer {
+    padding-top: 80px;
+    &__title {
+      width: 455px;
+      margin-bottom: 20px;
+    }
     &__container {
       display: flex;
       justify-content: space-between;
@@ -163,13 +183,14 @@
       margin: 0;
       align-items: stretch;
     }
-    &__btn {
-      width: 150px;
-    }
+
     &__img {
       height: 332px;
       width: 100%;
     }
+  }
+  .btn {
+    width: 150px;
   }
 }
 @include media-lg {
@@ -196,9 +217,11 @@
     }
   }
   .footer {
+    padding-top: 100px;
     &__title {
       min-width: none;
       width: 100%;
+      margin-bottom: 22px;
     }
     &__description-block {
       width: 555px;
@@ -208,9 +231,10 @@
     }
     &__text {
       font-size: 22px;
+      margin-bottom: 40px;
     }
-    &__btn {
-      font-size: 13px;
-    }
+  }
+  .btn {
+    font-size: 13px;
   }
 }
