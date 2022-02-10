@@ -7,11 +7,11 @@ body {
 
 .header {
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('../img/marian-kroell-OVXlWNcQV5M-unsplash.png') no-repeat;
+    url('../img/marian-kroell-OVXlWNcQV5M-unsplash.png') center / cover
+      no-repeat;
   background-size: cover;
   background-position: center center;
-  height: 236px;
-  min-width: 300px;
+  padding: 60px 15px 70px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -21,6 +21,7 @@ body {
     font-weight: 700;
     color: $white;
     width: 290px;
+    min-width: 290px;
   }
 }
 .item-container {
@@ -54,14 +55,14 @@ body {
   }
 
   &__img {
-    min-width: 258px;
+    width: 258px;
     height: 140px;
     background: $red;
     margin-bottom: 12px;
 
     img {
-      height: 100%;
       width: 100%;
+      object-fit: cover;
     }
   }
 

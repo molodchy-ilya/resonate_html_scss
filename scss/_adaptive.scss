@@ -1,5 +1,6 @@
 @include media-ssm {
   .header {
+    padding: 60px 63px 80px;
     &__title {
       width: 450px;
     }
@@ -7,11 +8,14 @@
 
   .item-container {
     width: 546px;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 30px;
+    justify-content: center;
   }
 
   .item {
-    padding: 28px;
-    // width: 546px;
+    padding: 16px;
+    width: 258px;
 
     &__category {
       margin-top: 12px;
@@ -23,7 +27,8 @@
 
     &__img {
       margin-bottom: 18px;
-      height: 150px;
+      width: 226px;
+      height: 140px;
     }
 
     &__title {
@@ -33,7 +38,7 @@
 }
 @include media-sm {
   .header {
-    height: 276px;
+    padding: 80px 150px 100px;
     &__title {
       width: 470px;
     }
@@ -42,12 +47,10 @@
     margin: auto;
     width: 720px;
     padding: 60px 24px 70px 24px;
-    grid-template-columns: repeat(2, 1fr);
-    column-gap: 30px;
-    justify-content: center;
   }
   .item {
     width: 345px;
+    padding: 28px;
 
     &__img {
       height: 150px;
@@ -67,7 +70,7 @@
 }
 @include media-md {
   .header {
-    height: 340px;
+    padding: 100px 180px 120px;
     &__title {
       width: 620px;
       font-size: 54px;
@@ -81,9 +84,11 @@
 
   .item {
     width: 465px;
+    padding: 30px;
 
     &__img {
-      height: 170px;
+      // height: 170px;
+
       width: 405px;
       margin-bottom: 20px;
     }
@@ -103,9 +108,9 @@
 }
 @include media-lg {
   .header {
-    height: 396px;
+    padding: 120px 585px 140px;
     &__title {
-      width: 730px;
+      min-width: 730px;
       font-size: 62px;
       letter-spacing: 1.4;
     }
@@ -118,7 +123,7 @@
     width: 360px;
 
     &__img {
-      height: 170px;
+      // height: 170px;
       width: 300px;
     }
   }
