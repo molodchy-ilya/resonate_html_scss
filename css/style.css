@@ -29,22 +29,28 @@ body {
           justify-content: center;
 }
 
-.title {
-  font-size: 46px;
-  font-weight: 700;
-  color: #fff;
+.header__title {
   width: 290px;
   min-width: 290px;
 }
 
-.item-container {
+.title {
+  font-size: 46px;
+  font-weight: 700;
+  color: #fff;
+}
+
+.container {
   width: 300px;
-  padding-top: 50px;
-  padding-bottom: 60px;
   margin: auto;
   display: -ms-grid;
   display: grid;
   justify-items: center;
+}
+
+.item-container {
+  padding-top: 50px;
+  padding-bottom: 60px;
 }
 
 .item {
@@ -105,14 +111,20 @@ body {
 }
 
 .item__btn {
-  letter-spacing: 0.8px;
-  font-size: 12px;
   width: 140px;
   height: 36px;
   border: none;
   color: #fff;
+}
+
+.btn {
+  letter-spacing: 0.8px;
+  font-size: 12px;
+  color: #fff;
   background: #00b6dd;
   cursor: pointer;
+  padding-top: 9px;
+  padding-bottom: 9px;
 }
 
 .item_blue .item__category {
@@ -125,6 +137,49 @@ body {
 
 .item_blue .item__btn {
   background: #081580;
+}
+
+.footer {
+  background: #070707;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  text-align: center;
+}
+
+.footer__title {
+  padding: 10px;
+  color: #00b6dd;
+}
+
+.footer__text {
+  color: #fff;
+  font-size: 18px;
+  line-height: 26px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.footer__btn-container {
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 16px;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.footer__btn {
+  background-color: #070707;
+  border: 1px solid #00b6dd;
+}
+
+.footer__btn:hover {
+  background-color: #00b6dd;
+}
+
+.footer__img {
+  background: url("../img/marian-kroell-OVXlWNcQV5M-unsplash2.png") center/cover no-repeat;
+  width: 100%;
+  height: 146px;
 }
 
 @media screen and (min-width: 576px) {
@@ -143,6 +198,22 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+  }
+  .footer__container {
+    width: 450px;
+  }
+  .footer__text {
+    width: 100%;
+    letter-spacing: 1px;
+  }
+  .footer__btn-container {
+    width: 286px;
+  }
+  .footer__btn {
+    width: 140px;
+  }
+  .footer__img {
+    height: 275px;
   }
   .item {
     padding: 16px;
@@ -170,6 +241,11 @@ body {
     bottom: 20px;
     left: 20px;
   }
+  .footer__btn-container {
+    -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+    margin: 0 auto 30px;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -193,9 +269,14 @@ body {
     width: 289px;
   }
   .item__btn {
-    position: absolute;
     bottom: 28px;
     left: 28px;
+  }
+  .footer__container {
+    width: 596px;
+  }
+  .footer__img {
+    height: 364px;
   }
 }
 
@@ -208,7 +289,7 @@ body {
     font-size: 54px;
     letter-spacing: 1.2;
   }
-  .item-container {
+  .container {
     width: 960px;
   }
   .item {
@@ -228,27 +309,79 @@ body {
   .item__text {
     margin-bottom: 80px;
   }
+  .footer__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .footer__description-block, .footer__img {
+    min-width: 455px;
+  }
+  .footer__title, .footer__text {
+    padding: 0;
+    text-align: left;
+  }
+  .footer__title {
+    margin-bottom: 20px;
+  }
+  .footer__btn-container {
+    margin: 0;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
+  }
+  .footer__btn {
+    width: 150px;
+  }
+  .footer__img {
+    height: 332px;
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 1200px) {
   .header {
-    padding: 120px 585px 140px;
+    padding: 120px auto 140px;
   }
-  .header__title {
-    min-width: 730px;
+  .title {
+    width: 730px;
     font-size: 62px;
     letter-spacing: 1.4;
+  }
+  .container {
+    width: 1140px;
   }
   .item-container {
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
-    width: 1140px;
   }
   .item {
     width: 360px;
   }
   .item__img {
     width: 300px;
+  }
+  .footer__title {
+    min-width: none;
+    width: 100%;
+  }
+  .footer__description-block {
+    width: 555px;
+  }
+  .footer__img {
+    width: 488px;
+  }
+  .footer__text {
+    font-size: 22px;
+  }
+  .footer__btn {
+    font-size: 13px;
   }
 }
 /*# sourceMappingURL=style.css.map */

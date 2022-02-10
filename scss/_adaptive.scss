@@ -12,6 +12,24 @@
     column-gap: 30px;
     justify-content: center;
   }
+  .footer {
+    &__container {
+      width: 450px;
+    }
+    &__text {
+      width: 100%;
+      letter-spacing: 1px;
+    }
+    &__btn-container {
+      width: 286px;
+    }
+    &__btn {
+      width: 140px;
+    }
+    &__img {
+      height: 275px;
+    }
+  }
 
   .item {
     padding: 16px;
@@ -43,6 +61,12 @@
       left: 20px;
     }
   }
+  .footer {
+    &__btn-container {
+      grid-template-columns: 1fr 1fr;
+      margin: 0 auto 30px;
+    }
+  }
 }
 @include media-sm {
   .header {
@@ -51,6 +75,7 @@
       width: 470px;
     }
   }
+
   .item-container {
     margin: auto;
     width: 720px;
@@ -66,9 +91,16 @@
     }
 
     &__btn {
-      position: absolute;
       bottom: 28px;
       left: 28px;
+    }
+  }
+  .footer {
+    &__container {
+      width: 596px;
+    }
+    &__img {
+      height: 364px;
     }
   }
 }
@@ -82,7 +114,7 @@
     }
   }
 
-  .item-container {
+  .container {
     width: 960px;
   }
 
@@ -109,19 +141,51 @@
       margin-bottom: 80px;
     }
   }
+  .footer {
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    &__description-block,
+    &__img {
+      min-width: 455px;
+    }
+    &__title,
+    &__text {
+      padding: 0;
+      text-align: left;
+    }
+    &__title {
+      margin-bottom: 20px;
+    }
+    &__btn-container {
+      margin: 0;
+      align-items: stretch;
+    }
+    &__btn {
+      width: 150px;
+    }
+    &__img {
+      height: 332px;
+      width: 100%;
+    }
+  }
 }
 @include media-lg {
   .header {
-    padding: 120px 585px 140px;
-    &__title {
-      min-width: 730px;
-      font-size: 62px;
-      letter-spacing: 1.4;
-    }
+    padding: 120px auto 140px;
+  }
+  .title {
+    width: 730px;
+    font-size: 62px;
+    letter-spacing: 1.4;
+  }
+  .container {
+    width: 1140px;
   }
   .item-container {
     grid-template-columns: repeat(3, 1fr);
-    width: 1140px;
   }
   .item {
     width: 360px;
@@ -129,6 +193,24 @@
     &__img {
       // height: 170px;
       width: 300px;
+    }
+  }
+  .footer {
+    &__title {
+      min-width: none;
+      width: 100%;
+    }
+    &__description-block {
+      width: 555px;
+    }
+    &__img {
+      width: 488px;
+    }
+    &__text {
+      font-size: 22px;
+    }
+    &__btn {
+      font-size: 13px;
     }
   }
 }
