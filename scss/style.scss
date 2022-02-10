@@ -16,13 +16,13 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  &__title {
-    font-size: 46px;
-    font-weight: 700;
-    color: $white;
-    width: 290px;
-    min-width: 290px;
-  }
+}
+.title {
+  font-size: 46px;
+  font-weight: 700;
+  color: $white;
+  width: 290px;
+  min-width: 290px;
 }
 .item-container {
   width: 300px;
