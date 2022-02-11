@@ -1,0 +1,184 @@
+$breakpoints: (
+  xs: '480px',
+  ssm: '576px',
+  sm: '768px',
+  md: '992px',
+  lg: '1200px',
+); // размер окна браузера
+
+$container-width: (
+  xs: 290px,
+  ssm: 546px,
+  sm: 720px,
+  md: 940px,
+  lg: 1140px,
+); // ширина контейнера (без учета строки - я про -15px)
+
+$grid-gutter-width: 30px; // отсуп между колонками
+$grid-columns: 12; // количество колонок
+
+@mixin make-row() {
+  // строка
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: ($grid-gutter-width / -2); // -15px
+  margin-left: ($grid-gutter-width / -2); // -15px
+}
+
+@mixin make-col-ready() {
+  // общие стили для колонки
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: $grid-gutter-width / 2; // 15px
+  padding-left: $grid-gutter-width / 2; // 15px
+}
+
+@mixin make-col($size, $columns: $grid-columns) {
+  // ширина колонки
+  flex: 0 0 percentage($size / $columns);
+  width: percentage($size / $columns);
+}
+
+// media
+@mixin breakpoint-lg {
+  // desktop
+  @media (max-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-lg-up {
+  @media (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md {
+  // tablet landscape
+  @media (max-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-md-up {
+  @media (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm {
+  // tablet port + mobile landscape
+  @media (max-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-sm-up {
+  @media (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-ssm {
+  // tablet port + mobile landscape
+  @media (max-width: map-get($breakpoints, ssm)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-ssm-up {
+  @media (min-width: map-get($breakpoints, ssm)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xs {
+  // mobile
+  @media (max-width: map-get($breakpoints, xs)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-xs-up {
+  @media (min-width: map-get($breakpoints, xs)) {
+    @content;
+  }
+}
+
+@mixin make-container {
+  // ширина контейнера
+  // padding-left: $grid-gutter-width / 2 !important;
+  // padding-right: $grid-gutter-width / 2 !important;
+  // width: auto !important;
+
+  width: map-get($container-width, xs) !important;
+  margin: 0 auto !important;
+  @include breakpoint-ssm-up {
+    width: map-get($container-width, ssm) !important;
+  }
+
+  @include breakpoint-sm-up {
+    width: map-get($container-width, sm) !important;
+  }
+
+  @include breakpoint-md-up {
+    width: map-get($container-width, md) !important;
+  }
+
+  @include breakpoint-lg-up {
+    width: map-get($container-width, lg) !important;
+  }
+}
+
+/* Пример использования */
+
+// .hero {
+//   background-color: black;
+//   position: relative;
+//   padding: 120px 0 140px;
+
+//   @include breakpoint-md {
+//     padding: 100px 0 120px;
+//   }
+
+//   @include breakpoint-sm {
+//     padding: 80px 0 100px;
+//   }
+
+//   @include breakpoint-xs {
+//     padding: 60px 0 80px;
+//   }
+
+//   // @include breakpoint-xxs {
+//   //   padding-bottom: 70px;
+//   // }
+
+//   &__row {
+//     @include make-row;
+
+//     justify-content: center;
+//   }
+
+//   &__col {
+//     @include make-col-ready;
+//     @include make-col(8);
+
+//     @include breakpoint-xs {
+//       @include make-col(10);
+//     }
+
+//     // @include breakpoint-xxs {
+//     //   @include make-col(12);
+//     // }
+//   }
+
+//   &__title {
+//     text-align: center;
+//     color: white;
+//   }
+// }
+
+// .container {
+//   @include make-container;
+// }
