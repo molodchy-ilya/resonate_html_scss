@@ -103,7 +103,9 @@ body {
 }
 
 .container {
-  width: 290px !important;
+  padding-left: 15px !important;
+  padding-right: 15px !important;
+  width: auto !important;
   margin: 0 auto !important;
 }
 

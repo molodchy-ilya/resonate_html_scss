@@ -108,11 +108,11 @@ $grid-columns: 12; // количество колонок
 
 @mixin make-container {
   // ширина контейнера
-  // padding-left: $grid-gutter-width / 2 !important;
-  // padding-right: $grid-gutter-width / 2 !important;
-  // width: auto !important;
+  padding-left: $grid-gutter-width / 2 !important;
+  padding-right: $grid-gutter-width / 2 !important;
+  width: auto !important;
 
-  width: map-get($container-width, xs) !important;
+  // width: map-get($container-width, xs) !important;
   margin: 0 auto !important;
   @include breakpoint-ssm-up {
     width: map-get($container-width, ssm) !important;
