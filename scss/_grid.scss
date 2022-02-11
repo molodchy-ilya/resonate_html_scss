@@ -10,8 +10,13 @@ $container-width: (
   xs: 290px,
   ssm: 546px,
   sm: 720px,
-  md: 940px,
-  lg: 1140px,
+  md: 970px,
+  lg: 1170px,
+  // xs: 290px,
+  // ssm: 546px,
+  // sm: 720px,
+  // md: 940px,
+  // lg: 1140px,,
 ); // ширина контейнера (без учета строки - я про -15px)
 
 $grid-gutter-width: 30px; // отсуп между колонками
@@ -110,13 +115,13 @@ $grid-columns: 12; // количество колонок
   // ширина контейнера
   padding-left: $grid-gutter-width / 2 !important;
   padding-right: $grid-gutter-width / 2 !important;
-  width: auto !important;
+  // width: auto !important;
 
   // width: map-get($container-width, xs) !important;
   margin: 0 auto !important;
-  @include breakpoint-ssm-up {
-    width: map-get($container-width, ssm) !important;
-  }
+  // @include breakpoint-ssm-up {
+  //   width: map-get($container-width, ssm) !important;
+  // }
 
   @include breakpoint-sm-up {
     width: map-get($container-width, sm) !important;

@@ -20,10 +20,10 @@ body {
     padding: 80px 0px 100px;
   }
   @include breakpoint-md-up {
-    padding: 100px 0 120px;
+    padding: 100px 0px 120px;
   }
   @include breakpoint-lg-up {
-    padding: 120px 0 140px;
+    padding: 120px 0px 140px;
   }
 
   &__row {
@@ -39,6 +39,9 @@ body {
     @include make-col(12);
 
     @include breakpoint-ssm-up {
+      @include make-col(10);
+    }
+    @include breakpoint-sm-up {
       @include make-col(8);
     }
   }
@@ -47,12 +50,16 @@ body {
   font-size: 46px;
   font-weight: 700;
   color: $white;
+  line-height: 48px;
+  letter-spacing: 1px;
 
   @include breakpoint-md-up {
     font-size: 54px;
+    line-height: 60px;
   }
   @include breakpoint-lg-up {
     font-size: 62px;
+    line-height: 68px;
   }
 }
 
@@ -62,7 +69,17 @@ body {
 
 .item-container {
   padding-top: 50px;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
+
+  @include breakpoint-sm-up {
+    padding: 60px 0px;
+  }
+  @include breakpoint-md-up {
+    padding: 80px 0px 90px;
+  }
+  @include breakpoint-lg-up {
+    padding: 100px 0px 100px;
+  }
 
   &__row {
     @include make-row;
@@ -75,17 +92,26 @@ body {
     align-items: stretch;
     @include make-col-ready;
     @include make-col(12);
+
     @include breakpoint-ssm-up {
       @include make-col(6);
     }
+
     @include breakpoint-sm-up {
-      @include make-col(6);
+      &:nth-last-child(2) .item {
+        margin-bottom: 0px;
+      }
     }
-    @include breakpoint-md-up {
-      @include make-col(6);
-    }
+
     @include breakpoint-lg-up {
       @include make-col(4);
+      &:nth-last-child(3) .item {
+        margin-bottom: 0px;
+      }
+    }
+
+    &:last-child .item {
+      margin-bottom: 0px;
     }
   }
 }
@@ -95,19 +121,9 @@ body {
   position: relative;
   padding: 16px 16px 20px 16px;
   margin-bottom: 30px;
-  // height: 100%;
-
-  @include breakpoint-ssm-up {
-    width: 258px;
-  }
+  overflow: hidden;
   @include breakpoint-sm-up {
-    width: 345px;
-  }
-  @include breakpoint-md-up {
-    width: 455px;
-  }
-  @include breakpoint-lg-up {
-    width: 360px;
+    padding: 28px;
   }
 
   &__category {
@@ -118,12 +134,20 @@ body {
     background: $cerulean;
     text-transform: uppercase;
     font-size: 12px;
-    height: 32px;
-    padding: 8px 15px;
+    padding: 6px 14px;
+    letter-spacing: 1.1px;
+    line-height: 18px;
+
+    @include breakpoint-sm-up {
+      top: 12px;
+    }
+    @include breakpoint-md-up {
+      padding: 7px 15px;
+      letter-spacing: 1.8px;
+    }
   }
 
   &__img {
-    // width: 100%;
     height: 140px;
     background: $red;
     margin-bottom: 12px;
@@ -132,17 +156,28 @@ body {
       width: 100%;
       object-fit: cover;
     }
-  }
 
-  &__description {
-    margin-bottom: 20px;
+    @include breakpoint-sm-up {
+      margin-bottom: 18px;
+      height: 150px;
+    }
+    @include breakpoint-md-up {
+      margin-bottom: 20px;
+      height: 170px;
+    }
   }
-
   &__author {
     margin-bottom: 6px;
     font-size: 13px;
     letter-spacing: 0.8;
     color: $cerulean;
+
+    @include breakpoint-md-up {
+      letter-spacing: 1px;
+    }
+    @include breakpoint-lg-up {
+      margin-bottom: 10px;
+    }
   }
 
   &__title {
@@ -150,19 +185,44 @@ body {
     line-height: 26px;
     letter-spacing: 1.2px;
     margin-bottom: 10px;
-  }
 
-  &__text {
-    font-size: 14px;
-    line-height: 22px;
-    letter-spacing: 0.6px;
+    @include breakpoint-sm-up {
+      margin-bottom: 12px;
+    }
+    @include breakpoint-md-up {
+      margin-bottom: 14px;
+      font-size: 20px;
+      line-height: 30px;
+    }
+    @include breakpoint-lg-up {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+  &__description {
     margin-bottom: 56px;
 
     @include breakpoint-sm-up {
       margin-bottom: 70px;
     }
     @include breakpoint-md-up {
-      margin-bottom: 80px;
+      margin-bottom: 75px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+
+    @include breakpoint-md-up {
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: 0.8px;
+    }
+    @include breakpoint-lg-up {
+      font-size: 18px;
+      letter-spacing: 0.5px;
     }
   }
 }
@@ -173,14 +233,18 @@ body {
   color: $white;
   background: $cerulean;
   cursor: pointer;
-  padding-top: 9px;
-  padding-bottom: 9px;
-  width: 140px;
-  height: 36px;
+  padding: 9px 28px;
   border: none;
   position: absolute;
   bottom: 20px;
   left: 16px;
+
+  @include breakpoint-md-up {
+    bottom: 30px;
+    left: 30px;
+    line-height: 20px;
+    font-size: 14px;
+  }
 }
 
 .item_blue {
@@ -234,8 +298,9 @@ body {
     @include make-col(12);
 
     @include breakpoint-ssm-up {
-      @include make-col(10);
+      @include make-col(10.5);
     }
+
     @include breakpoint-md-up {
       @include make-col(6);
     }
@@ -249,22 +314,28 @@ body {
     @include breakpoint-md-up {
       margin-bottom: 20px;
       text-align: left;
+      font-size: 54px;
     }
     @include breakpoint-lg-up {
       margin-bottom: 22px;
+      font-size: 60px;
+      letter-spacing: 2px;
+      line-height: 64px;
     }
   }
   &__text {
     color: $white;
     font-size: 18px;
     line-height: 26px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     margin-bottom: 30px;
     @include breakpoint-md-up {
       text-align: left;
     }
     @include breakpoint-lg-up {
       margin-bottom: 40px;
+      font-size: 22px;
+      line-height: 34px;
     }
   }
 
@@ -287,21 +358,18 @@ body {
     position: relative;
     bottom: 0px;
     left: 0px;
-    width: 100%;
+    line-height: 18px;
 
     &_outline {
       background-color: $black;
       outline: 1px solid $cerulean;
     }
 
-    @include breakpoint-ssm-up {
-      width: 140px;
-    }
     @include breakpoint-md-up {
-      width: 150px;
+      padding: 10px 30px;
     }
     @include breakpoint-lg-up {
-      width: 160px;
+      padding: 10px 35px;
     }
   }
 
