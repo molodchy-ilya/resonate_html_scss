@@ -35,7 +35,7 @@
     @include make-col(12);
 
     @include breakpoint-ssm-up {
-      @include make-col(10.5);
+      @include make-col(10);
     }
 
     @include breakpoint-md-up {
@@ -43,23 +43,6 @@
     }
   }
 
-  &__title {
-    font-size: 46px;
-    color: get-color(cerulean);
-    margin-bottom: 14px;
-
-    @include breakpoint-md-up {
-      margin-bottom: 20px;
-      text-align: left;
-      font-size: 54px;
-    }
-    @include breakpoint-lg-up {
-      margin-bottom: 22px;
-      font-size: 60px;
-      letter-spacing: 2px;
-      line-height: 64px;
-    }
-  }
   &__text {
     color: get-color(white);
     font-size: 18px;
@@ -97,7 +80,7 @@
     left: 0;
     line-height: 18px;
 
-    &_dec-outline {
+    &_bg-none {
       background-color: get-color(black);
       outline: 1px solid get-color(cerulean);
     }
