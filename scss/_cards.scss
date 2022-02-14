@@ -3,13 +3,13 @@
   padding-bottom: 50px;
 
   @include breakpoint-sm-up {
-    padding: 60px 0px;
+    padding: 60px 0;
   }
   @include breakpoint-md-up {
-    padding: 80px 0px 90px;
+    padding: 80px 0 90px;
   }
   @include breakpoint-lg-up {
-    padding: 100px 0px 100px;
+    padding: 100px 0 100px;
   }
 
   &__row {

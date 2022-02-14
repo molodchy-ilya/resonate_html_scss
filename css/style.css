@@ -8,7 +8,7 @@
 
 .header {
   position: relative;
-  padding: 60px 0px 70px;
+  padding: 60px 0 70px;
   text-align: center;
 }
 
@@ -41,25 +41,25 @@
 
 @media (min-width: 576px) {
   .header {
-    padding: 60px 0px 80px;
+    padding: 60px 0 80px;
   }
 }
 
 @media (min-width: 768px) {
   .header {
-    padding: 80px 0px 100px;
+    padding: 80px 0 100px;
   }
 }
 
 @media (min-width: 992px) {
   .header {
-    padding: 100px 0px 120px;
+    padding: 100px 0 120px;
   }
 }
 
 @media (min-width: 1200px) {
   .header {
-    padding: 120px 0px 140px;
+    padding: 120px 0 140px;
   }
 }
 
@@ -119,19 +119,19 @@
 
 @media (min-width: 768px) {
   .cards {
-    padding: 60px 0px;
+    padding: 60px 0;
   }
 }
 
 @media (min-width: 992px) {
   .cards {
-    padding: 80px 0px 90px;
+    padding: 80px 0 90px;
   }
 }
 
 @media (min-width: 1200px) {
   .cards {
-    padding: 100px 0px 100px;
+    padding: 100px 0 100px;
   }
 }
 
@@ -512,8 +512,8 @@
 
 .footer .btn {
   position: relative;
-  bottom: 0px;
-  left: 0px;
+  bottom: 0;
+  left: 0;
   line-height: 18px;
 }
 
