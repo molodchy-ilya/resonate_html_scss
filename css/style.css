@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
 * {
   -webkit-box-sizing: border-box;
@@ -7,17 +6,42 @@
   padding: 0;
 }
 
-/* Пример использования */
 body {
   background: #fff;
   font-family: 'Noto Sans', sans-serif;
 }
 
 .header {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.7)), to(rgba(0, 0, 0, 0.7))), url("../img/marian-kroell-OVXlWNcQV5M-unsplash.png") center/cover no-repeat;
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../img/marian-kroell-OVXlWNcQV5M-unsplash.png") center/cover no-repeat;
+  position: relative;
   padding: 60px 0px 70px;
   text-align: center;
+}
+
+.header__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.header__bg-image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.header__bg-overlay {
+  position: absolute;
+  bottom: 0;
+  background: black;
+  background: rgba(1, 1, 1, 0.6);
+  /* Black see-through */
+  width: 100%;
+  height: 100%;
 }
 
 @media (min-width: 576px) {
@@ -139,30 +163,30 @@ body {
   }
 }
 
-.item-container {
+.cards {
   padding-top: 50px;
   padding-bottom: 50px;
 }
 
 @media (min-width: 768px) {
-  .item-container {
+  .cards {
     padding: 60px 0px;
   }
 }
 
 @media (min-width: 992px) {
-  .item-container {
+  .cards {
     padding: 80px 0px 90px;
   }
 }
 
 @media (min-width: 1200px) {
-  .item-container {
+  .cards {
     padding: 100px 0px 100px;
   }
 }
 
-.item-container__row {
+.cards__row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -175,7 +199,7 @@ body {
   row-gap: 30px;
 }
 
-.item-container__col {
+.cards__col {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -194,7 +218,7 @@ body {
 }
 
 @media (min-width: 576px) {
-  .item-container__col {
+  .cards__col {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 50%;
             flex: 0 0 50%;
@@ -203,7 +227,7 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .item-container__col {
+  .cards__col {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 33.33333%;
             flex: 0 0 33.33333%;
@@ -211,7 +235,7 @@ body {
   }
 }
 
-.item {
+.card {
   border: 1px solid #d3d8e4;
   position: relative;
   padding: 16px 16px 20px 16px;
@@ -219,12 +243,12 @@ body {
 }
 
 @media (min-width: 768px) {
-  .item {
+  .card {
     padding: 28px;
   }
 }
 
-.item__category {
+.card__category {
   position: absolute;
   color: #fff;
   top: 0;
@@ -238,45 +262,46 @@ body {
 }
 
 @media (min-width: 768px) {
-  .item__category {
+  .card__category {
     top: 12px;
   }
 }
 
 @media (min-width: 992px) {
-  .item__category {
+  .card__category {
     padding: 7px 15px;
     letter-spacing: 1.8px;
   }
 }
 
-.item__img {
+.card__img-container {
   height: 140px;
   background: #ff779a;
   margin-bottom: 12px;
 }
 
-.item__img img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-
 @media (min-width: 768px) {
-  .item__img {
+  .card__img-container {
     margin-bottom: 18px;
     height: 150px;
   }
 }
 
 @media (min-width: 992px) {
-  .item__img {
+  .card__img-container {
     margin-bottom: 20px;
     height: 170px;
   }
 }
 
-.item__author {
+.card__img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.card__author {
   margin-bottom: 6px;
   font-size: 13px;
   letter-spacing: 0.8;
@@ -284,18 +309,18 @@ body {
 }
 
 @media (min-width: 992px) {
-  .item__author {
+  .card__author {
     letter-spacing: 1px;
   }
 }
 
 @media (min-width: 1200px) {
-  .item__author {
+  .card__author {
     margin-bottom: 10px;
   }
 }
 
-.item__title {
+.card__title {
   font-size: 18px;
   line-height: 26px;
   letter-spacing: 1.2px;
@@ -303,13 +328,13 @@ body {
 }
 
 @media (min-width: 768px) {
-  .item__title {
+  .card__title {
     margin-bottom: 12px;
   }
 }
 
 @media (min-width: 992px) {
-  .item__title {
+  .card__title {
     margin-bottom: 14px;
     font-size: 20px;
     line-height: 30px;
@@ -317,36 +342,36 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .item__title {
+  .card__title {
     font-size: 22px;
     line-height: 32px;
   }
 }
 
-.item__description {
+.card__description {
   margin-bottom: 56px;
 }
 
 @media (min-width: 768px) {
-  .item__description {
+  .card__description {
     margin-bottom: 70px;
   }
 }
 
 @media (min-width: 992px) {
-  .item__description {
+  .card__description {
     margin-bottom: 75px;
   }
 }
 
-.item__text {
+.card__text {
   font-size: 14px;
   line-height: 22px;
   letter-spacing: 0.6px;
 }
 
 @media (min-width: 992px) {
-  .item__text {
+  .card__text {
     font-size: 16px;
     line-height: 24px;
     letter-spacing: 0.8px;
@@ -354,10 +379,22 @@ body {
 }
 
 @media (min-width: 1200px) {
-  .item__text {
+  .card__text {
     font-size: 18px;
     letter-spacing: 0.5px;
   }
+}
+
+.card_clr-blue .card__category {
+  background: #081580;
+}
+
+.card_clr-blue .card__author {
+  color: #081580;
+}
+
+.card_clr-blue .btn {
+  background: #081580;
 }
 
 .btn {
@@ -389,18 +426,6 @@ body {
     line-height: 20px;
     font-size: 14px;
   }
-}
-
-.item_blue .item__category {
-  background: #081580;
-}
-
-.item_blue .item__author {
-  color: #081580;
-}
-
-.item_blue .btn {
-  background: #081580;
 }
 
 .footer {
@@ -574,7 +599,7 @@ body {
   line-height: 18px;
 }
 
-.footer .btn_outline {
+.footer .btn_dec-outline {
   background-color: #070707;
   outline: 1px solid #00b6dd;
 }
@@ -592,30 +617,42 @@ body {
 }
 
 .footer__img {
-  background: url("../img/marian-kroell-OVXlWNcQV5M-unsplash2.png") center/cover no-repeat;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+
+.footer__img-container {
+  position: relative;
   height: 146px;
 }
 
 @media (min-width: 576px) {
-  .footer__img {
+  .footer__img-container {
     height: 275px;
   }
 }
 
 @media (min-width: 768px) {
-  .footer__img {
+  .footer__img-container {
     height: 364px;
   }
 }
 
 @media (min-width: 992px) {
-  .footer__img {
+  .footer__img-container {
     height: 332px;
   }
 }
 
 @media (min-width: 1200px) {
-  .footer__img {
+  .footer__img-container {
     height: 380px;
   }
 }

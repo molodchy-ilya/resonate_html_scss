@@ -1,12 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
-$white: #fff;
-$background-color: #fff;
-$cerulean: #00b6dd;
-$blue: #081580;
-$grey: #d3d8e4;
-$red: #ff779a;
-$black: #070707;
+$colors: (
+  white: #fff,
+  cerulean: #00b6dd,
+  blue: #081580,
+  grey: #d3d8e4,
+  red: #ff779a,
+  black: #070707,
+);
+
+@function get-color($name) {
+  @return map-get($colors, $name);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
