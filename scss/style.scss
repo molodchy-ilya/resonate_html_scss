@@ -85,6 +85,7 @@ body {
     @include make-row;
 
     justify-content: space-around;
+    row-gap: 30px;
   }
 
   &__col {
@@ -97,21 +98,8 @@ body {
       @include make-col(6);
     }
 
-    @include breakpoint-sm-up {
-      &:nth-last-child(2) .item {
-        margin-bottom: 0px;
-      }
-    }
-
     @include breakpoint-lg-up {
       @include make-col(4);
-      &:nth-last-child(3) .item {
-        margin-bottom: 0px;
-      }
-    }
-
-    &:last-child .item {
-      margin-bottom: 0px;
     }
   }
 }
@@ -120,7 +108,6 @@ body {
   border: 1px solid $grey;
   position: relative;
   padding: 16px 16px 20px 16px;
-  margin-bottom: 30px;
   overflow: hidden;
   @include breakpoint-sm-up {
     padding: 28px;
@@ -239,6 +226,12 @@ body {
   bottom: 20px;
   left: 16px;
 
+  @include breakpoint-sm-up {
+    bottom: 28px;
+    left: 28px;
+    line-height: 20px;
+    font-size: 14px;
+  }
   @include breakpoint-md-up {
     bottom: 30px;
     left: 30px;
