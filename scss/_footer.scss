@@ -80,11 +80,6 @@
     left: 0;
     line-height: 18px;
 
-    &_bg-none {
-      background-color: get-color(black);
-      outline: 1px solid get-color(cerulean);
-    }
-
     @include breakpoint-md-up {
       padding: 10px 30px;
     }
@@ -94,29 +89,7 @@
   }
 
   &__img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-
-    &-container {
-      position: relative;
-      height: 146px;
-      @include breakpoint-ssm-up {
-        height: 275px;
-      }
-      @include breakpoint-sm-up {
-        height: 364px;
-      }
-      @include breakpoint-md-up {
-        height: 332px;
-      }
-      @include breakpoint-lg-up {
-        height: 380px;
-      }
-    }
+    display: block;
+    max-width: 100%;
   }
 }

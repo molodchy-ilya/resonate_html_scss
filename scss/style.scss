@@ -1,71 +1,10 @@
-@import 'config', 'grid', 'header', 'cards', 'footer';
+@import 'config', 'grid', 'header', 'cards', 'footer', 'btn', 'title';
 
 body {
   background: get-color(white);
   font-family: 'Noto Sans', sans-serif;
 }
 
-.title {
-  font-size: 46px;
-  font-weight: 700;
-  color: get-color(white);
-  line-height: 48px;
-  letter-spacing: 1px;
-
-  @include breakpoint-md-up {
-    font-size: 54px;
-    line-height: 60px;
-  }
-  @include breakpoint-lg-up {
-    font-size: 62px;
-    line-height: 68px;
-  }
-
-  &_clr-blue {
-    font-size: 46px;
-    color: get-color(cerulean);
-    margin-bottom: 14px;
-
-    @include breakpoint-md-up {
-      margin-bottom: 20px;
-      text-align: left;
-      font-size: 54px;
-    }
-    @include breakpoint-lg-up {
-      margin-bottom: 22px;
-      font-size: 60px;
-      letter-spacing: 2px;
-      line-height: 64px;
-    }
-  }
-}
-
 .container {
   @include make-container;
-}
-
-.btn {
-  letter-spacing: 0.8px;
-  font-size: 12px;
-  color: get-color(white);
-  background: get-color(cerulean);
-  cursor: pointer;
-  padding: 9px 28px;
-  border: none;
-  position: absolute;
-  bottom: 20px;
-  left: 16px;
-
-  @include breakpoint-sm-up {
-    bottom: 28px;
-    left: 28px;
-    line-height: 20px;
-    font-size: 14px;
-  }
-  @include breakpoint-md-up {
-    bottom: 30px;
-    left: 30px;
-    line-height: 20px;
-    font-size: 14px;
-  }
 }
