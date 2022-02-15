@@ -1,0 +1,34 @@
+.title {
+  font-size: 46px;
+  font-weight: 700;
+  color: get-color(white);
+  line-height: 48px;
+  letter-spacing: 1px;
+
+  @include breakpoint-md-up {
+    font-size: 54px;
+    line-height: 60px;
+  }
+  @include breakpoint-lg-up {
+    font-size: 62px;
+    line-height: 68px;
+  }
+
+  &_clr-blue {
+    font-size: 46px;
+    color: get-color(cerulean);
+    margin-bottom: 14px;
+
+    @include breakpoint-md-up {
+      margin-bottom: 20px;
+      text-align: left;
+      font-size: 54px;
+    }
+    @include breakpoint-lg-up {
+      margin-bottom: 22px;
+      font-size: 60px;
+      letter-spacing: 2px;
+      line-height: 64px;
+    }
+  }
+}

@@ -11,7 +11,7 @@
     height: 100%;
 
     &-image {
-      @include width-height-100();
+      @include image-cover();
     }
 
     &-overlay {
