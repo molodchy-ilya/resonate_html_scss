@@ -1,0 +1,54 @@
+.logo {
+  background: get-color(whiteAntique);
+  padding: 50px 0 50px;
+
+  @include breakpoint-ssm-up {
+    padding: 60px 0 60px;
+  }
+  @include breakpoint-sm-up {
+    padding: 70px 0 70px;
+  }
+  @include breakpoint-md-up {
+    padding: 80px 0 80px;
+  }
+  @include breakpoint-lg-up {
+    padding: 100px 0 100px;
+  }
+
+  &__row {
+    @include make-row;
+
+    justify-content: center;
+    row-gap: 30px;
+
+    @include breakpoint-sm-up {
+      row-gap: 40px;
+    }
+    @include breakpoint-md-up {
+      row-gap: 50px;
+    }
+    @include breakpoint-lg-up {
+      row-gap: 70px;
+    }
+  }
+
+  &__col {
+    display: flex;
+    justify-content: center;
+    @include make-col-ready;
+    @include make-col(4);
+
+    @include breakpoint-ssm-up {
+      @include make-col(2.4);
+    }
+
+    @include breakpoint-md-up {
+      @include make-col(2);
+    }
+  }
+
+  &__img {
+    display: block;
+    max-width: 100%;
+  }
+}

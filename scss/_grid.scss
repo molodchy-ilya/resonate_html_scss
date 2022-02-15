@@ -9,9 +9,12 @@ $breakpoints: (
 $container-width: (
   xs: 290px,
   ssm: 546px,
-  sm: 720px,
+  sm: 750px,
   md: 970px,
   lg: 1170px,
+  // sm: 720px,
+  // md: 940px,
+  // lg: 1140px,,
 ); // ширина контейнера (без учета строки - я про -15px)
 
 $grid-gutter-width: 30px; // отсуп между колонками
@@ -125,10 +128,3 @@ $grid-columns: 12; // количество колонок
     width: map-get($container-width, lg) !important;
   }
 }
-
-// trash
-// xs: 290px,
-// ssm: 546px,
-// sm: 720px,
-// md: 940px,
-// lg: 1140px,,s

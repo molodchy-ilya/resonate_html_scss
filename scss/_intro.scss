@@ -1,4 +1,4 @@
-.footer {
+.intro {
   background: get-color(black);
   padding-top: 50px;
   padding-bottom: 50px;
@@ -75,9 +75,6 @@
   }
 
   .btn {
-    position: relative;
-    bottom: 0;
-    left: 0;
     line-height: 18px;
 
     @include breakpoint-md-up {
