@@ -715,6 +715,133 @@
   max-width: 100%;
 }
 
+.text-cards {
+  padding: 50px 0;
+}
+
+@media (min-width: 576px) {
+  .text-cards {
+    padding: 60px 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .text-cards {
+    padding: 70px 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-cards {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-cards {
+    padding: 100px 0;
+  }
+}
+
+.text-cards__row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  row-gap: 30px;
+}
+
+.text-cards__col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .text-cards__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50%;
+            flex: 0 0 50%;
+    width: 50%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-cards__col {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 33.33333%;
+            flex: 0 0 33.33333%;
+    width: 33.33333%;
+  }
+}
+
+.text-card {
+  background: #ccd5ae;
+  width: 100%;
+  padding: 16px 16px 30px 16px;
+}
+
+@media (min-width: 768px) {
+  .text-card {
+    padding: 30px 30px 40px 30px;
+  }
+}
+
+.text-card__title {
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 992px) {
+  .text-card__title {
+    font-size: 24px;
+    line-height: 34px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text-card__title {
+    font-size: 26px;
+    line-height: 36px;
+    letter-spacing: 1.2px;
+  }
+}
+
+.text-card__text {
+  font-size: 14px;
+  line-height: 22px;
+  letter-spacing: 0.6px;
+}
+
+@media (min-width: 992px) {
+  .text-card__text {
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0.8px;
+  }
+}
+
 body {
   background: #fff;
   font-family: 'Noto Sans', sans-serif;

@@ -1,0 +1,78 @@
+.text-cards {
+  padding: 50px 0;
+
+  @include breakpoint-ssm-up {
+    padding: 60px 0;
+  }
+  @include breakpoint-sm-up {
+    padding: 70px 0;
+  }
+  @include breakpoint-md-up {
+    padding: 80px 0;
+  }
+  @include breakpoint-lg-up {
+    padding: 100px 0;
+  }
+
+  &__row {
+    @include make-row;
+
+    justify-content: flex-start;
+    row-gap: 30px;
+  }
+
+  &__col {
+    display: flex;
+    justify-content: center;
+
+    @include make-col-ready;
+    @include make-col(12);
+
+    @include breakpoint-ssm-up {
+      @include make-col(6);
+    }
+    @include breakpoint-lg-up {
+      @include make-col(4);
+    }
+  }
+}
+
+.text-card {
+  background: get-color(grayLight);
+  width: 100%;
+  padding: 16px 16px 30px 16px;
+
+  @include breakpoint-sm-up {
+    padding: 30px 30px 40px 30px;
+  }
+
+  &__title {
+    font-weight: 700;
+    font-size: 22px;
+    line-height: 32px;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+
+    @include breakpoint-md-up {
+      font-size: 24px;
+      line-height: 34px;
+    }
+    @include breakpoint-lg-up {
+      font-size: 26px;
+      line-height: 36px;
+      letter-spacing: 1.2px;
+    }
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.6px;
+
+    @include breakpoint-md-up {
+      font-size: 16px;
+      line-height: 26px;
+      letter-spacing: 0.8px;
+    }
+  }
+}
