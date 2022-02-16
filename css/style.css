@@ -765,7 +765,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  row-gap: 40px;
+  row-gap: 30px;
+}
+
+@media (min-width: 576px) {
+  .text-cards_centered .text-cards__row {
+    row-gap: 40px;
+  }
 }
 
 @media (min-width: 768px) {

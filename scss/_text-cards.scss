@@ -28,7 +28,11 @@
     #{$root}_centered & {
       justify-content: center;
 
-      row-gap: 40px;
+      row-gap: 30px;
+
+      @include breakpoint-ssm-up {
+        row-gap: 40px;
+      }
 
       @include breakpoint-sm-up {
         row-gap: 50px;
