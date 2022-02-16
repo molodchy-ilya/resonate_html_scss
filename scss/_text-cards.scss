@@ -1,22 +1,10 @@
 .text-cards {
   $root: &;
-  padding: 50px 0;
+
+  @include section-paddings;
 
   &_centered {
     background: get-color(blue);
-  }
-
-  @include breakpoint-ssm-up {
-    padding: 60px 0;
-  }
-  @include breakpoint-sm-up {
-    padding: 70px 0;
-  }
-  @include breakpoint-md-up {
-    padding: 80px 0;
-  }
-  @include breakpoint-lg-up {
-    padding: 100px 0;
   }
 
   &__row {
