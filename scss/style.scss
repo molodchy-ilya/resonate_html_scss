@@ -1,5 +1,5 @@
 @import 'config', 'grid', 'hero', 'cards', 'intro', 'btn', 'title', 'logos',
-  'text-cards';
+  'text-cards', 'header', 'menu';
 
 body {
   background: get-color(white);
@@ -8,4 +8,16 @@ body {
 
 .container {
   @include make-container;
+}
+.wrapper {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
+  // height: 0vh;
+
+  @include breakpoint-md-up {
+    background: get-color(white);
+    height: auto;
+  }
 }
