@@ -9,6 +9,8 @@ $colors: (
   black: #010101,
   whiteAntique: #feebd6,
   grayLight: #ccd5ae,
+  grayDark: #2d3b40,
+  blueLight: #faf8ff,
 );
 
 @mixin image-cover {
@@ -19,15 +21,13 @@ $colors: (
 }
 
 @mixin link-outline {
-  &::after {
-    position: absolute;
-    content: '';
-    height: 3px;
-    width: 100%;
-    background-color: get-color(cerulean);
-    bottom: -3px;
-    left: 0px;
-  }
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 100%;
+  bottom: -3px;
+  left: 0px;
+  background-color: get-color(cerulean);
 }
 
 @mixin section-paddings {
@@ -49,6 +49,17 @@ $colors: (
 
 @function get-color($name) {
   @return map-get($colors, $name);
+}
+
+@keyframes hover-animation {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
 }
 
 * {

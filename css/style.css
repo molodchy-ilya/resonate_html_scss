@@ -1,4 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+@-webkit-keyframes hover-animation {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
+}
+@keyframes hover-animation {
+  from {
+    left: 50%;
+    width: 0;
+  }
+  to {
+    left: 0;
+    width: 100%;
+  }
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -920,20 +941,11 @@
   z-index: 3;
 }
 
-.header__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+.header_light {
+  background: #faf8ff;
 }
 
-.header__col {
+.header .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -943,46 +955,39 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  width: 100%;
 }
 
-.header__logo-container {
+.header__logo {
   -webkit-mask: center / 100% no-repeat;
           mask: center / 100% no-repeat;
   -webkit-mask-image: url("../img/logo/octo.svg");
           mask-image: url("../img/logo/octo.svg");
-}
-
-.header .header__logo {
   width: 76px;
   height: 18px;
   background-color: #fff;
+  cursor: pointer;
+}
+
+.header_light .header__logo {
+  background-color: #2d3b40;
 }
 
 @media (min-width: 768px) {
-  .header .header__logo {
+  .header__logo {
     width: 84px;
     height: 20px;
   }
 }
 
 @media (min-width: 992px) {
-  .header .header__logo {
+  .header__logo {
     width: 102px;
     height: 24px;
   }
 }
 
 @media (min-width: 1200px) {
-  .header .header__logo {
+  .header__logo {
     width: 110px;
     height: 26px;
   }
@@ -994,6 +999,8 @@
   width: 27px;
   height: 27px;
   cursor: pointer;
+  -webkit-transition: all 3s ease;
+  transition: all 3s ease;
 }
 
 .header__burger::before, .header__burger::after,
@@ -1003,6 +1010,13 @@
   width: 100%;
   height: 3px;
   background: #00b6dd;
+  -webkit-transition: all 0.8s ease;
+  transition: all 0.8s ease;
+}
+
+.header_light .header__burger::before, .header_light .header__burger::after, .header_light
+.header__burger span {
+  background: #081580;
 }
 
 .header__burger::before, .header__burger::after {
@@ -1019,6 +1033,24 @@
 
 .header__burger span {
   top: 46%;
+}
+
+.header__burger_close span {
+  background: transparent;
+}
+
+.header_light .header__burger_close span {
+  background: transparent;
+}
+
+.header__burger_close::before {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+}
+
+.header__burger_close::after {
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
 }
 
 @media (min-width: 992px) {
@@ -1145,20 +1177,8 @@
   text-decoration: none;
 }
 
-.menu__link_active::after {
-  position: absolute;
-  content: '';
-  height: 3px;
-  width: 100%;
-  background-color: #00b6dd;
-  bottom: -3px;
-  left: 0px;
-}
-
-@media (min-width: 992px) {
-  .menu__link_active::after {
-    bottom: 0;
-  }
+.menu_blue .menu__link {
+  color: #081580;
 }
 
 .menu__link:hover::after {
@@ -1166,13 +1186,44 @@
   content: '';
   height: 3px;
   width: 100%;
-  background-color: #00b6dd;
   bottom: -3px;
   left: 0px;
+  background-color: #00b6dd;
+  -webkit-animation: 0.5s hover-animation;
+          animation: 0.5s hover-animation;
+}
+
+.menu_blue .menu__link:hover::after {
+  background: #081580;
 }
 
 @media (min-width: 992px) {
   .menu__link:hover::after {
+    bottom: 0px;
+  }
+}
+
+.menu__link_active::after {
+  position: absolute;
+  content: '';
+  height: 3px;
+  width: 100%;
+  bottom: -3px;
+  left: 0px;
+  background-color: #00b6dd;
+}
+
+.menu_blue .menu__link_active::after {
+  background: #081580;
+}
+
+.menu__link_active:hover::after {
+  -webkit-animation: none;
+          animation: none;
+}
+
+@media (min-width: 992px) {
+  .menu__link_active::after {
     bottom: 0;
   }
 }
@@ -1246,6 +1297,10 @@
 
 .contact_column .contact__phone {
   display: block;
+}
+
+.contact_blue .contact__phone {
+  color: #081580;
 }
 
 @media (min-width: 992px) {

@@ -1,4 +1,5 @@
 .header {
+  $root: &;
   background: get-color(black);
   position: relative;
   padding: 12px 0;
@@ -6,29 +7,28 @@
   box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
   z-index: 3;
 
-  &__row {
-    @include make-row;
-
-    justify-content: center;
+  &_light {
+    background: get-color(blueLight);
   }
 
-  &__col {
+  .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include make-col-ready;
-    @include make-col(12);
   }
 
-  &__logo-container {
+  &__logo {
     mask: center / 100% no-repeat;
 
     mask-image: url('../img/logo/octo.svg');
-  }
-  .header__logo {
     width: 76px;
     height: 18px;
     background-color: get-color(white);
+    cursor: pointer;
+
+    #{$root}_light & {
+      background-color: get-color(grayDark);
+    }
 
     @include breakpoint-sm-up {
       width: 84px;
@@ -50,6 +50,7 @@
     width: 27px;
     height: 27px;
     cursor: pointer;
+    transition: all 3s ease;
 
     &::before,
     &::after,
@@ -59,6 +60,11 @@
       width: 100%;
       height: 3px;
       background: get-color(cerulean);
+      transition: all 0.8s ease;
+
+      #{$root}_light & {
+        background: get-color(blue);
+      }
     }
 
     &::before,
@@ -76,10 +82,26 @@
       top: 46%;
     }
 
+    &_close {
+      span {
+        background: transparent;
+        #{$root}_light & {
+          background: transparent;
+        }
+      }
+      &::before {
+        transform: translateY(8px) rotate(45deg);
+      }
+      &::after {
+        transform: translateY(-8px) rotate(-45deg);
+      }
+    }
+
     @include breakpoint-md-up {
       display: none;
     }
   }
+
   @include breakpoint-md-up {
     padding: 13px 0;
   }

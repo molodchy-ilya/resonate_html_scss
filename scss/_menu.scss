@@ -1,4 +1,5 @@
 .menu {
+  $root: &;
   background: get-color(white);
   position: fixed;
   width: 100%;
@@ -58,17 +59,39 @@
     color: get-color(cerulean);
     text-decoration: none;
 
-    &_active {
-      @include link-outline;
+    #{$root}_blue & {
+      color: get-color(blue);
+    }
+
+    &:hover {
+      &::after {
+        @include link-outline;
+        animation: 0.5s hover-animation;
+
+        #{$root}_blue & {
+          background: get-color(blue);
+        }
+      }
 
       @include breakpoint-md-up {
         &::after {
-          bottom: 0;
+          bottom: 0px;
         }
       }
     }
-    &:hover {
-      @include link-outline;
+
+    &_active {
+      &::after {
+        @include link-outline;
+
+        #{$root}_blue & {
+          background: get-color(blue);
+        }
+      }
+
+      &:hover::after {
+        animation: none;
+      }
 
       @include breakpoint-md-up {
         &::after {

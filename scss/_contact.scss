@@ -10,6 +10,10 @@
       display: block;
     }
 
+    #{$root}_blue & {
+      color: get-color(blue);
+    }
+
     display: none;
     color: get-color(cerulean);
     letter-spacing: 0.8px;
