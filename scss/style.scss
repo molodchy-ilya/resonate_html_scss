@@ -1,5 +1,5 @@
 @import 'config', 'grid', 'hero', 'cards', 'intro', 'btn', 'title', 'logos',
-  'text-cards', 'header', 'menu';
+  'text-cards', 'header', 'menu', 'contact';
 
 body {
   background: get-color(white);
@@ -12,12 +12,17 @@ body {
 .wrapper {
   position: sticky;
   top: 0;
-  z-index: 999;
+  z-index: 2;
   box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
-  // height: 0vh;
+  height: 100%;
 
   @include breakpoint-md-up {
     background: get-color(white);
     height: auto;
   }
+}
+
+.class {
+  position: relative;
+  height: 100vh;
 }

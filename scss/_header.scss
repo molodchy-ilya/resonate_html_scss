@@ -1,8 +1,10 @@
 .header {
   background: get-color(black);
+  position: relative;
   padding: 12px 0;
   width: 100%;
   box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
+  z-index: 3;
 
   &__row {
     @include make-row;
@@ -18,55 +20,27 @@
     @include make-col(12);
   }
 
-  &__logo {
-    display: block;
-    max-width: 100%;
+  &__logo-container {
+    mask: center / 100% no-repeat;
+
+    mask-image: url('../img/logo/octo.svg');
+  }
+  .header__logo {
+    width: 76px;
     height: 18px;
+    background-color: get-color(white);
 
     @include breakpoint-sm-up {
+      width: 84px;
       height: 20px;
     }
     @include breakpoint-md-up {
+      width: 102px;
       height: 24px;
     }
     @include breakpoint-lg-up {
+      width: 110px;
       height: 26px;
-    }
-  }
-
-  &__contact {
-    display: flex;
-
-    align-items: center;
-    column-gap: 21px;
-
-    @include breakpoint-lg-up {
-      column-gap: 26px;
-    }
-  }
-
-  &__phone {
-    display: none;
-    color: get-color(cerulean);
-    letter-spacing: 0.8px;
-    font-size: 13px;
-    line-height: 20px;
-    @include breakpoint-md-up {
-      display: block;
-    }
-  }
-
-  .btn {
-    display: none;
-    letter-spacing: 0.8px;
-    font-size: 13px;
-    line-height: 20px;
-    padding: 9px 30px 11px;
-    @include breakpoint-md-up {
-      display: block;
-    }
-    @include breakpoint-lg-up {
-      padding: 9px 35px 11px;
     }
   }
 
@@ -105,5 +79,11 @@
     @include breakpoint-md-up {
       display: none;
     }
+  }
+  @include breakpoint-md-up {
+    padding: 13px 0;
+  }
+  @include breakpoint-lg-up {
+    padding: 15px 0;
   }
 }

@@ -57,7 +57,7 @@
     padding: 6px 14px;
     letter-spacing: 1.1px;
     line-height: 18px;
-    z-index: 100;
+    z-index: 1;
 
     #{$root}_clr-blue & {
       background: get-color(blue);

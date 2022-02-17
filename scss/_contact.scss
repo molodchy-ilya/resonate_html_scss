@@ -1,0 +1,61 @@
+.contact {
+  $root: &;
+  display: flex;
+
+  align-items: center;
+  column-gap: 21px;
+
+  &__phone {
+    #{$root}_column & {
+      display: block;
+    }
+
+    display: none;
+    color: get-color(cerulean);
+    letter-spacing: 0.8px;
+    font-size: 13px;
+    line-height: 20px;
+    @include breakpoint-md-up {
+      display: block;
+    }
+  }
+
+  .btn {
+    display: none;
+    letter-spacing: 0.8px;
+    font-size: 13px;
+    line-height: 20px;
+    padding: 9px 30px 11px;
+
+    &_visible {
+      display: block;
+    }
+
+    @include breakpoint-md-up {
+      display: block;
+    }
+    @include breakpoint-lg-up {
+      padding: 9px 35px 11px;
+    }
+  }
+
+  &_column {
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 8px;
+
+    padding: 0 0 80px;
+
+    @include breakpoint-md-up {
+      display: none;
+    }
+  }
+
+  @include breakpoint-lg-up {
+    column-gap: 26px;
+  }
+}
