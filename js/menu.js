@@ -1,7 +1,7 @@
 //*** MENU ***//
 // show/hide
 const burger = document.querySelector('.header__burger');
-const menu = document.querySelector('.menu');
+// const menu = document.querySelector('.menu');
 const fader = document.querySelector('.fader');
 if (burger) {
   burger.addEventListener('click', () => {

@@ -3,7 +3,7 @@
 const header = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__logo');
 const contacts = document.querySelectorAll('.contact');
-// const menu = document.querySelector('.menu');
+const menu = document.querySelector('.menu');
 const contactBtns = [];
 [...contacts].forEach((contact) => {
   [...contact.childNodes].forEach((child) => {
