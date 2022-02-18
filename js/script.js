@@ -74,6 +74,12 @@ if (arrows) {
       arrow.parentElement.parentElement.classList.toggle(
         'accordion__item_open',
       );
+
+      const accordionItems = document.querySelectorAll('.accordion__item');
+      accordionItems.forEach((accordionItem) => {
+        if (accordionItem !== arrow.parentElement.parentElement)
+          accordionItem.classList.remove('accordion__item_open');
+      });
     });
   });
 }
