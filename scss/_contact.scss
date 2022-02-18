@@ -11,16 +11,22 @@
     }
 
     #{$root}_blue & {
-      color: get-color(blue);
+      color: get-color(black);
     }
 
     display: none;
-    color: get-color(cerulean);
+    color: get-color(black);
     letter-spacing: 0.8px;
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 12px;
+    line-height: 18px;
+    transition: all 0.3s linear;
+
     @include breakpoint-md-up {
       display: block;
+      color: get-color(cerulean);
+      letter-spacing: 0.8px;
+      font-size: 13px;
+      line-height: 20px;
     }
   }
 
@@ -29,7 +35,9 @@
     letter-spacing: 0.8px;
     font-size: 13px;
     line-height: 20px;
-    padding: 9px 30px 11px;
+    padding: 9px 28px;
+    @include hover-opacity;
+    transition: all 0.3s linear;
 
     &_visible {
       display: block;
@@ -44,9 +52,6 @@
   }
 
   &_column {
-    font-size: 12px;
-    line-height: 18px;
-    letter-spacing: 0.8px;
     display: flex;
     flex-direction: column;
     align-items: center;

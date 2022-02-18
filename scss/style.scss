@@ -1,5 +1,5 @@
 @import 'config', 'grid', 'hero', 'cards', 'intro', 'btn', 'title', 'logos',
-  'text-cards', 'header', 'menu', 'contact';
+  'text-cards', 'header', 'menu', 'contact', 'accordion';
 
 body {
   background: get-color(white);
@@ -13,16 +13,19 @@ body {
   position: sticky;
   top: 0;
   z-index: 2;
-  box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
   height: 100%;
 
   @include breakpoint-md-up {
+    box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
     background: get-color(white);
     height: auto;
   }
 }
 
-.class {
-  position: relative;
-  height: 100vh;
+.fader.fader_show {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: 100%;
+  width: 100%;
 }

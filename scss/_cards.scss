@@ -37,7 +37,7 @@
 .card {
   $root: &;
 
-  border: 1px solid get-color(grey);
+  border: 1px solid get-color(greyLight);
   position: relative;
   padding: 16px 16px 20px 16px;
   overflow: hidden;

@@ -1,16 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap');
 
 $colors: (
+  black: #010101,
   white: #fff,
+  whiteAntique: #feebd6,
   cerulean: #00b6dd,
   blue: #081580,
-  grey: #d3d8e4,
-  red: #ff779a,
-  black: #010101,
-  whiteAntique: #feebd6,
-  grayLight: #ccd5ae,
-  grayDark: #2d3b40,
   blueLight: #faf8ff,
+  red: #ff779a,
+  greyDark: #2d3b40,
+  greyLight: #d3d8e4,
+  cream: #ccd5ae,
 );
 
 @mixin image-cover {
@@ -28,6 +28,13 @@ $colors: (
   bottom: -3px;
   left: 0px;
   background-color: get-color(cerulean);
+}
+
+@mixin hover-opacity {
+  transition: opacity 0.2s linear;
+  &:hover {
+    opacity: 0.6;
+  }
 }
 
 @mixin section-paddings {

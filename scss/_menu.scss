@@ -39,14 +39,16 @@
     row-gap: 18px;
     padding: 40px 0 0;
 
+    @include breakpoint-sm-up {
+      padding: 50px 0 0;
+    }
     @include breakpoint-md-up {
       padding: 0;
       flex-direction: row;
       column-gap: 41px;
     }
     @include breakpoint-lg-up {
-      flex-direction: row;
-      column-gap: 41px;
+      column-gap: 51px;
     }
   }
 
@@ -56,11 +58,17 @@
     letter-spacing: 1px;
     position: relative;
     cursor: pointer;
-    color: get-color(cerulean);
     text-decoration: none;
+    color: get-color(black);
+    @include hover-opacity;
+    transition-duration: 0.3s;
 
-    #{$root}_blue & {
-      color: get-color(blue);
+    &::after {
+      @include link-outline;
+      width: 0;
+      bottom: 0;
+      transition: all 0.3s linear;
+      left: 50%;
     }
 
     &:hover {
@@ -83,6 +91,7 @@
     &_active {
       &::after {
         @include link-outline;
+        transition: all 0.3s linear;
 
         #{$root}_blue & {
           background: get-color(blue);
@@ -126,15 +135,13 @@
   @include breakpoint-ssm-up {
     width: 320px;
   }
+
   @include breakpoint-md-up {
     left: 0;
     background: none;
     position: relative;
     height: auto;
     overflow-y: visible;
-  }
-
-  @include breakpoint-md-up {
     padding: 0;
   }
 }

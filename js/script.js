@@ -1,12 +1,15 @@
-// show/hide menu
+//*** MENU ***//
+// show/hide
 const burger = document.querySelector('.header__burger');
+const menu = document.querySelector('.menu');
+const fader = document.querySelector('.fader');
 if (burger) {
   burger.addEventListener('click', () => {
     burger.classList.toggle('header__burger_close');
-    const menu = document.querySelector('.menu');
-    if (menu) {
-      menu.classList.toggle('menu_show');
-    }
+    // if (menu) {
+    menu.classList.toggle('menu_show');
+    fader.classList.toggle('fader_show');
+    // }
   });
 }
 
@@ -23,11 +26,23 @@ if (links) {
   });
 }
 
-// change header/menu style
+// close on click on fader
+if (fader) {
+  fader.addEventListener('click', () => {
+    if (menu.classList.contains('menu_show')) {
+      menu.classList.remove('menu_show');
+      burger.classList.remove('header__burger_close');
+      fader.classList.remove('fader_show');
+    }
+  });
+}
+
+//*** HEADER ***//
+// switch theme
 const header = document.querySelector('.header');
 const headerLogo = document.querySelector('.header__logo');
 const contacts = document.querySelectorAll('.contact');
-const menu = document.querySelector('.menu');
+// const menu = document.querySelector('.menu');
 const contactBtns = [];
 [...contacts].forEach((contact) => {
   [...contact.childNodes].forEach((child) => {
@@ -36,8 +51,6 @@ const contactBtns = [];
     }
   });
 });
-console.log(menu);
-console.log(contactBtns);
 
 if (headerLogo && contacts && menu) {
   headerLogo.addEventListener('click', () => {
@@ -48,6 +61,19 @@ if (headerLogo && contacts && menu) {
     menu.classList.toggle('menu_blue');
     contactBtns.forEach((btn) => {
       btn.classList.toggle('btn_clr-blue');
+    });
+  });
+}
+
+//*** ACCORDION ***//
+// show/hide text
+const arrows = document.querySelectorAll('.accordion__item-arrow');
+if (arrows) {
+  arrows.forEach((arrow) => {
+    arrow.addEventListener('click', () => {
+      arrow.parentElement.parentElement.classList.toggle(
+        'accordion__item_open',
+      );
     });
   });
 }
