@@ -67,18 +67,18 @@ if (headerLogo && contacts && menu) {
 
 //*** ACCORDION ***//
 // show/hide text
-const arrows = document.querySelectorAll('.accordion__item-arrow');
-if (arrows) {
-  arrows.forEach((arrow) => {
-    arrow.addEventListener('click', () => {
-      arrow.parentElement.parentElement.classList.toggle(
-        'accordion__item_open',
-      );
+const accordionItems = document.querySelectorAll('.accordion__item');
+const accordionTitles = document.querySelectorAll(
+  '.accordion__item-title-container',
+);
+if (accordionTitles) {
+  accordionTitles.forEach((title) => {
+    title.addEventListener('click', () => {
+      title.parentElement.classList.toggle('accordion__item_open');
 
-      const accordionItems = document.querySelectorAll('.accordion__item');
-      accordionItems.forEach((accordionItem) => {
-        if (accordionItem !== arrow.parentElement.parentElement)
-          accordionItem.classList.remove('accordion__item_open');
+      accordionItems.forEach((item) => {
+        if (item !== title.parentElement)
+          item.classList.remove('accordion__item_open');
       });
     });
   });
