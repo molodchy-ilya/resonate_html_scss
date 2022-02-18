@@ -8,6 +8,9 @@
   padding: 9px 28px;
   border: none;
 
+  @include hover-opacity;
+  transition: all 0.3s linear;
+
   &_clr-blue {
     background: get-color(blue);
   }

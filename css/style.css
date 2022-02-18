@@ -555,6 +555,14 @@
   cursor: pointer;
   padding: 9px 28px;
   border: none;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.btn:hover {
+  opacity: 0.6;
 }
 
 .btn_clr-blue {
@@ -1354,14 +1362,6 @@
   font-size: 13px;
   line-height: 20px;
   padding: 9px 28px;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
-  -webkit-transition: all 0.3s linear;
-  transition: all 0.3s linear;
-}
-
-.contact .btn:hover {
-  opacity: 0.6;
 }
 
 .contact .btn_visible {
@@ -1406,6 +1406,10 @@
     -webkit-column-gap: 26px;
             column-gap: 26px;
   }
+}
+
+.contact a {
+  text-decoration: none;
 }
 
 .accordion {
@@ -1462,7 +1466,6 @@
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 0;
-  padding: 17.5px 0 0;
 }
 
 .accordion__item:first-child {
@@ -1486,8 +1489,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 0 20px;
-  margin: 0 0 15px;
+  padding: 17.5px 20px 15px;
+  cursor: pointer;
 }
 
 .accordion__item-arrow {
@@ -1573,11 +1576,20 @@ body {
   }
 }
 
-.fader.fader_show {
+.fader {
   position: fixed;
-  top: 50px;
+  opacity: 0%;
+  background: #010101;
+  top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
+  height: 100vh;
+  width: 100vw;
+  -webkit-transition: opacity 0.3s linear;
+  transition: opacity 0.3s linear;
+}
+
+.fader_show {
+  opacity: 20%;
+  z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

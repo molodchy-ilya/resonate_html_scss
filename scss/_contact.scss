@@ -36,8 +36,6 @@
     font-size: 13px;
     line-height: 20px;
     padding: 9px 28px;
-    @include hover-opacity;
-    transition: all 0.3s linear;
 
     &_visible {
       display: block;
@@ -66,5 +64,9 @@
 
   @include breakpoint-lg-up {
     column-gap: 26px;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
