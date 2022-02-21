@@ -8,7 +8,7 @@
   box-shadow: 0 0 8px rgba(1, 1, 1, 0.2);
   transition: all 0.3s linear;
 
-  &_light {
+  &_theme-light {
     background: get-color(blueLight);
   }
 
@@ -21,6 +21,7 @@
   &__logo {
     @include hover-opacity;
     mask: center / 100% no-repeat;
+    z-index: 1;
 
     mask-image: url('../img/logo/octo.svg');
     width: 76px;
@@ -28,7 +29,7 @@
     background-color: get-color(white);
     cursor: pointer;
 
-    #{$root}_light & {
+    #{$root}_theme-light & {
       background-color: get-color(greyDark);
     }
 
@@ -64,7 +65,7 @@
       background: get-color(cerulean);
       transition: all 0.8s ease;
 
-      #{$root}_light & {
+      #{$root}_theme-light & {
         background: get-color(blue);
       }
     }
@@ -84,10 +85,10 @@
       top: 46%;
     }
 
-    &_close {
+    #{$root}_open & {
       span {
         background: transparent;
-        #{$root}_light & {
+        #{$root}_theme-light & {
           background: transparent;
         }
       }

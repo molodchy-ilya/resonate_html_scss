@@ -24,9 +24,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 0;
+    border-top: 1px solid get-color(greyLight);
 
-    &:first-child {
-      border-top: 1px solid get-color(greyLight);
+    &:last-child {
+      border-bottom: 1px solid get-color(greyLight);
     }
 
     &-title {
@@ -65,16 +66,16 @@
       font-size: 16px;
       line-height: 26px;
       letter-spacing: 0.8px;
-      max-height: 0;
+      height: 0;
       overflow: hidden;
       transition: overflow 0s linear;
       transition: all 0.5s ease-out;
-
-      border-bottom: 1px solid get-color(greyLight);
+      opacity: 0;
 
       #{$root}_open & {
         padding: 0 20px 29px;
-        max-height: 300px;
+        height: auto;
+        opacity: 1;
       }
     }
   }

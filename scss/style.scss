@@ -22,18 +22,6 @@ body {
   }
 }
 
-.fader {
-  position: fixed;
-  opacity: 0%;
-  background: get-color(black);
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-
-  transition: opacity 0.3s linear;
-  &_show {
-    opacity: 20%;
-    z-index: 1;
-  }
+main {
+  z-index: 1;
 }

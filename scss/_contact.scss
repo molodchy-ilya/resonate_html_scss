@@ -10,7 +10,7 @@
       display: block;
     }
 
-    #{$root}_blue & {
+    .header_theme-light #{$root} & {
       color: get-color(black);
     }
 
@@ -40,6 +40,9 @@
     &_visible {
       display: block;
     }
+    .header_theme-light .btn {
+      background: get-color(blue);
+    }
 
     @include breakpoint-md-up {
       display: block;
@@ -62,6 +65,16 @@
     }
   }
 
+  @include breakpoint-sm-up {
+    position: fixed;
+    width: 320px;
+    padding: 176px 0 0;
+    z-index: 0;
+  }
+  @include breakpoint-md-up {
+    position: relative;
+    padding: 0;
+  }
   @include breakpoint-lg-up {
     column-gap: 26px;
   }

@@ -569,6 +569,14 @@
   background: #081580;
 }
 
+.header_theme-light .contact .btn {
+  background: #081580;
+}
+
+.header_theme-light + .menu .contact .btn {
+  background: #081580;
+}
+
 .btn_bg-none {
   background-color: #010101;
   outline: 1px solid #00b6dd;
@@ -952,7 +960,7 @@
   transition: all 0.3s linear;
 }
 
-.header_light {
+.header_theme-light {
   background: #faf8ff;
 }
 
@@ -973,6 +981,7 @@
   transition: opacity 0.2s linear;
   -webkit-mask: center / 100% no-repeat;
           mask: center / 100% no-repeat;
+  z-index: 1;
   -webkit-mask-image: url("../img/logo/octo.svg");
           mask-image: url("../img/logo/octo.svg");
   width: 76px;
@@ -985,7 +994,7 @@
   opacity: 0.6;
 }
 
-.header_light .header__logo {
+.header_theme-light .header__logo {
   background-color: #2d3b40;
 }
 
@@ -1035,7 +1044,7 @@
   transition: all 0.8s ease;
 }
 
-.header_light .header__burger::before, .header_light .header__burger::after, .header_light
+.header_theme-light .header__burger::before, .header_theme-light .header__burger::after, .header_theme-light
 .header__burger span {
   background: #081580;
 }
@@ -1056,20 +1065,20 @@
   top: 46%;
 }
 
-.header__burger_close span {
+.header_open .header__burger span {
   background: transparent;
 }
 
-.header_light .header__burger_close span {
+.header_theme-light .header_open .header__burger span {
   background: transparent;
 }
 
-.header__burger_close::before {
+.header_open .header__burger::before {
   -webkit-transform: translateY(8px) rotate(45deg);
           transform: translateY(8px) rotate(45deg);
 }
 
-.header__burger_close::after {
+.header_open .header__burger::after {
   -webkit-transform: translateY(-8px) rotate(-45deg);
           transform: translateY(-8px) rotate(-45deg);
 }
@@ -1109,20 +1118,7 @@
   padding: 50px 0 0;
 }
 
-.menu__row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-
-.menu__col {
+.menu .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1132,24 +1128,13 @@
           flex-direction: column;
   row-gap: 30px;
   margin: 0 auto;
-  position: relative;
-  width: 100%;
-  min-height: 1px;
-  padding-right: 15px;
-  padding-left: 15px;
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 100%;
-          flex: 0 0 100%;
-  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: #fff;
 }
 
-@media (min-width: 992px) {
-  .menu__col {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
+.header_open + .menu {
+  right: 0;
 }
 
 .menu__links {
@@ -1165,16 +1150,21 @@
           align-items: center;
   row-gap: 18px;
   padding: 40px 0 0;
+  position: relative;
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
   .menu__links {
     padding: 50px 0 0;
+    position: fixed;
+    width: 320px;
   }
 }
 
 @media (min-width: 992px) {
   .menu__links {
+    position: relative;
     padding: 0;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
@@ -1237,7 +1227,7 @@
           animation: 0.5s hover-animation;
 }
 
-.menu_blue .menu__link:hover::after {
+.header_theme-light + .menu .menu__link:hover::after {
   background: #081580;
 }
 
@@ -1259,7 +1249,7 @@
   transition: all 0.3s linear;
 }
 
-.menu_blue .menu__link_active::after {
+.header_theme-light + .menu .menu__link_active::after {
   background: #081580;
 }
 
@@ -1289,15 +1279,29 @@
   }
 }
 
+.menu .fader {
+  position: fixed;
+  opacity: 0;
+  background: #010101;
+  top: 0;
+  left: 0;
+  height: 0;
+  width: 100vw;
+  z-index: -1;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.header_open + .menu .fader {
+  opacity: 20%;
+  height: 100vh;
+}
+
 .menu .btn {
   letter-spacing: 0.8px;
   font-size: 12px;
   line-height: 18px;
   padding: 9px 28px;
-}
-
-.menu_show {
-  right: 0;
 }
 
 @media (min-width: 576px) {
@@ -1308,12 +1312,13 @@
 
 @media (min-width: 992px) {
   .menu {
-    left: 0;
-    background: none;
     position: relative;
+    right: auto;
+    background: none;
     height: auto;
     overflow-y: visible;
     padding: 0;
+    width: 100%;
   }
 }
 
@@ -1342,7 +1347,7 @@
   display: block;
 }
 
-.contact_blue .contact__phone {
+.header_theme-light .contact .contact__phone {
   color: #010101;
 }
 
@@ -1366,6 +1371,10 @@
 
 .contact .btn_visible {
   display: block;
+}
+
+.contact .btn .header_theme-light .btn {
+  background: #081580;
 }
 
 @media (min-width: 992px) {
@@ -1398,6 +1407,22 @@
 @media (min-width: 992px) {
   .contact_column {
     display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .contact {
+    position: fixed;
+    width: 320px;
+    padding: 176px 0 0;
+    z-index: 0;
+  }
+}
+
+@media (min-width: 992px) {
+  .contact {
+    position: relative;
+    padding: 0;
   }
 }
 
@@ -1466,10 +1491,11 @@
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 0;
+  border-top: 1px solid #d3d8e4;
 }
 
-.accordion__item:first-child {
-  border-top: 1px solid #d3d8e4;
+.accordion__item:last-child {
+  border-bottom: 1px solid #d3d8e4;
 }
 
 .accordion__item-title {
@@ -1516,18 +1542,19 @@
   font-size: 16px;
   line-height: 26px;
   letter-spacing: 0.8px;
-  max-height: 0;
+  height: 0;
   overflow: hidden;
   -webkit-transition: overflow 0s linear;
   transition: overflow 0s linear;
   -webkit-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
-  border-bottom: 1px solid #d3d8e4;
+  opacity: 0;
 }
 
 .accordion__item_open .accordion__item-text {
   padding: 0 20px 29px;
-  max-height: 300px;
+  height: auto;
+  opacity: 1;
 }
 
 body {
@@ -1576,20 +1603,7 @@ body {
   }
 }
 
-.fader {
-  position: fixed;
-  opacity: 0%;
-  background: #010101;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  -webkit-transition: opacity 0.3s linear;
-  transition: opacity 0.3s linear;
-}
-
-.fader_show {
-  opacity: 20%;
+main {
   z-index: 1;
 }
 /*# sourceMappingURL=style.css.map */

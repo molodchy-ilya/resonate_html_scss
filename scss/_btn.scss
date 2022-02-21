@@ -15,6 +15,13 @@
     background: get-color(blue);
   }
 
+  .header_theme-light .contact & {
+    background: get-color(blue);
+  }
+  .header_theme-light + .menu .contact & {
+    background: get-color(blue);
+  }
+
   &_bg-none {
     background-color: get-color(black);
     outline: 1px solid get-color(cerulean);
