@@ -38,13 +38,14 @@
     @include breakpoint-sm-up {
       padding: 50px 0 0;
       position: fixed;
-      width: 320px;
+      width: 290px;
     }
     @include breakpoint-md-up {
       position: relative;
       padding: 0;
       flex-direction: row;
       column-gap: 41px;
+      width: auto;
     }
     @include breakpoint-lg-up {
       column-gap: 51px;

@@ -1158,7 +1158,7 @@
   .menu__links {
     padding: 50px 0 0;
     position: fixed;
-    width: 320px;
+    width: 290px;
   }
 }
 
@@ -1172,6 +1172,7 @@
             flex-direction: row;
     -webkit-column-gap: 41px;
             column-gap: 41px;
+    width: auto;
   }
 }
 
@@ -1413,7 +1414,7 @@
 @media (min-width: 768px) {
   .contact {
     position: fixed;
-    width: 320px;
+    width: 290px;
     padding: 176px 0 0;
     z-index: 0;
   }
@@ -1423,6 +1424,7 @@
   .contact {
     position: relative;
     padding: 0;
+    width: auto;
   }
 }
 
