@@ -2,11 +2,11 @@
 // show/hide
 const burger = document.querySelector('.header__burger');
 const fader = document.querySelector('.fader');
-if (burger) {
-  burger.addEventListener('click', () => {
+[burger, fader].forEach((item) => {
+  item.addEventListener('click', () => {
     header.classList.toggle('header_open');
   });
-}
+});
 
 // change active link
 const links = document.querySelectorAll('.menu__link');
@@ -18,12 +18,5 @@ if (links) {
 
       link.classList.add('menu__link_active');
     });
-  });
-}
-
-// close on click on fader
-if (fader) {
-  fader.addEventListener('click', () => {
-    header.classList.toggle('header_open');
   });
 }

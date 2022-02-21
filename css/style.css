@@ -565,15 +565,8 @@
   opacity: 0.6;
 }
 
-.btn_clr-blue {
-  background: #081580;
-}
-
-.header_theme-light .contact .btn {
-  background: #081580;
-}
-
-.header_theme-light + .menu .contact .btn {
+.header_theme-light .contact .btn,
+.header_theme-light + .menu .contact .btn, .btn_clr-blue {
   background: #081580;
 }
 

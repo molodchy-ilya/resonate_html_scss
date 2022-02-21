@@ -11,14 +11,9 @@
   @include hover-opacity;
   transition: all 0.3s linear;
 
+  .header_theme-light .contact &,
+  .header_theme-light + .menu .contact &,
   &_clr-blue {
-    background: get-color(blue);
-  }
-
-  .header_theme-light .contact & {
-    background: get-color(blue);
-  }
-  .header_theme-light + .menu .contact & {
     background: get-color(blue);
   }
 
